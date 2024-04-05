@@ -40,14 +40,14 @@ PYBIND11_MODULE(pymdstresslab, m){
             .def(py::init<Vector3d, Vector3d, int, int, int>())
             .def(py::init<std::string>())
             .def("read",&Grid<Current>::read)
-            .def("read",&Grid<Current>::write);
+            .def("write",&Grid<Current>::write);
 
     py::class_<Grid<Reference>,GridBase>(m, "GridReference")
             .def(py::init<int>())
             .def(py::init<Vector3d, Vector3d, int, int, int>())
             .def(py::init<std::string>())
             .def("read",&Grid<Reference>::read)
-            .def("read",&Grid<Reference>::write);
+            .def("write",&Grid<Reference>::write);
             
     py::class_<MethodSphere>(m, "MethodSphere")
             .def(py::init<double, std::string>())
